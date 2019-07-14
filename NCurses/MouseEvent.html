@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.29.0">
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="../js/doc.js"></script>
+<script type="text/javascript">
+  CrystalDoc.base_path = "../";
+</script>
+
+  <meta id="repository-name" content="github.com/SamualLB/ncurses">
+  <title>NCurses::MouseEvent - github.com/SamualLB/ncurses</title>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="repository-links">
+      <a href="../index.html">README</a>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="github.com/SamualLB/ncurses/NCurses" data-name="ncurses">
+      <a href="../NCurses.html">NCurses</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/SamualLB/ncurses/NCurses/Attribute" data-name="ncurses::attribute">
+      <a href="../NCurses/Attribute.html">Attribute</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/SamualLB/ncurses/NCurses/Color" data-name="ncurses::color">
+      <a href="../NCurses/Color.html">Color</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/SamualLB/ncurses/NCurses/Cursor" data-name="ncurses::cursor">
+      <a href="../NCurses/Cursor.html">Cursor</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/SamualLB/ncurses/NCurses/Key" data-name="ncurses::key">
+      <a href="../NCurses/Key.html">Key</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/SamualLB/ncurses/NCurses/Mouse" data-name="ncurses::mouse">
+      <a href="../NCurses/Mouse.html">Mouse</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/SamualLB/ncurses/NCurses/MouseEvent" data-name="ncurses::mouseevent">
+      <a href="../NCurses/MouseEvent.html">MouseEvent</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/SamualLB/ncurses/NCurses/Window" data-name="ncurses::window">
+      <a href="../NCurses/Window.html">Window</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">struct</span> NCurses::MouseEvent
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../NCurses/MouseEvent.html">NCurses::MouseEvent</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Returned by <code>#get_mouse</code> after <code><a href="../LibNCurses/Key.html#Mouse">Key::Mouse</a></code> has been returned</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/SamualLB/ncurses/blob/b04489e7c798205e36d76c62a73bc6fe0bb4a46a/src/ncurses/mouse_event.cr#L3" target="_blank">
+        ncurses/mouse_event.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28device_id%2Ccoordinates%2Cstate%29-class-method" class="signature"><strong>.new</strong>(device_id, coordinates, state)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28event%3ALibNCurses%3A%3AMEVENT%29-class-method" class="signature"><strong>.new</strong>(event : LibNCurses::MEVENT)</a>
+        
+          <div class="summary"><p>Converts fields from LibC ints to specific types</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#coordinates%3ANamedTuple%28%29-instance-method" class="signature"><strong>#coordinates</strong> : NamedTuple()</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#device_id%3AInt16-instance-method" class="signature"><strong>#device_id</strong> : Int16</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#enclose%3F%28window%3AWindow%29-instance-method" class="signature"><strong>#enclose?</strong>(window : Window)</a>
+        
+          <div class="summary"><p>If this mouse event took place inside a specific window</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#non_relative%28window%3AWindow%29%3AMouseEvent-instance-method" class="signature"><strong>#non_relative</strong>(window : Window) : MouseEvent</a>
+        
+          <div class="summary"><p>Returns a new <code><a href="../NCurses/MouseEvent.html">MouseEvent</a></code> with full-screen relative coordinates</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#relative%28window%3AWindow%29%3AMouseEvent-instance-method" class="signature"><strong>#relative</strong>(window : Window) : MouseEvent</a>
+        
+          <div class="summary"><p>Returns a new <code><a href="../NCurses/MouseEvent.html">MouseEvent</a></code> with window-relative coordinates</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#state%3AMouse-instance-method" class="signature"><strong>#state</strong> : Mouse</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new(device_id,coordinates,state)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(device_id, coordinates, state)
+
+        <a class="method-permalink" href="#new%28device_id%2Ccoordinates%2Cstate%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/b04489e7c798205e36d76c62a73bc6fe0bb4a46a/src/ncurses/mouse_event.cr#L15" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(event:LibNCurses::MEVENT)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(event : LibNCurses::MEVENT)
+
+        <a class="method-permalink" href="#new%28event%3ALibNCurses%3A%3AMEVENT%29-class-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Converts fields from LibC ints to specific types</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/b04489e7c798205e36d76c62a73bc6fe0bb4a46a/src/ncurses/mouse_event.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="coordinates:NamedTuple()-instance-method">
+      <div class="signature">
+        
+        def <strong>coordinates</strong> : NamedTuple()
+
+        <a class="method-permalink" href="#coordinates%3ANamedTuple%28%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/b04489e7c798205e36d76c62a73bc6fe0bb4a46a/src/ncurses/mouse_event.cr#L7" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="device_id:Int16-instance-method">
+      <div class="signature">
+        
+        def <strong>device_id</strong> : Int16
+
+        <a class="method-permalink" href="#device_id%3AInt16-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/b04489e7c798205e36d76c62a73bc6fe0bb4a46a/src/ncurses/mouse_event.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="enclose?(window:Window)-instance-method">
+      <div class="signature">
+        
+        def <strong>enclose?</strong>(window : <a href="../NCurses/Window.html">Window</a>)
+
+        <a class="method-permalink" href="#enclose%3F%28window%3AWindow%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>If this mouse event took place inside a specific window</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/b04489e7c798205e36d76c62a73bc6fe0bb4a46a/src/ncurses/mouse_event.cr#L19" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="non_relative(window:Window):MouseEvent-instance-method">
+      <div class="signature">
+        
+        def <strong>non_relative</strong>(window : <a href="../NCurses/Window.html">Window</a>) : <a href="../NCurses/MouseEvent.html">MouseEvent</a>
+
+        <a class="method-permalink" href="#non_relative%28window%3AWindow%29%3AMouseEvent-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a new <code><a href="../NCurses/MouseEvent.html">MouseEvent</a></code> with full-screen relative coordinates</p>
+
+<p>The opposite of <code><a href="../NCurses/MouseEvent.html#relative%28window%3AWindow%29%3AMouseEvent-instance-method">#relative</a></code></p>
+
+<p>Wrapper for <code>wmouse_trafo()</code></p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/b04489e7c798205e36d76c62a73bc6fe0bb4a46a/src/ncurses/mouse_event.cr#L41" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="relative(window:Window):MouseEvent-instance-method">
+      <div class="signature">
+        
+        def <strong>relative</strong>(window : <a href="../NCurses/Window.html">Window</a>) : <a href="../NCurses/MouseEvent.html">MouseEvent</a>
+
+        <a class="method-permalink" href="#relative%28window%3AWindow%29%3AMouseEvent-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>Returns a new <code><a href="../NCurses/MouseEvent.html">MouseEvent</a></code> with window-relative coordinates</p>
+
+<p>Wrapper for <code>wmouse_trafo()</code></p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/b04489e7c798205e36d76c62a73bc6fe0bb4a46a/src/ncurses/mouse_event.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="state:Mouse-instance-method">
+      <div class="signature">
+        
+        def <strong>state</strong> : <a href="../NCurses/Mouse.html">Mouse</a>
+
+        <a class="method-permalink" href="#state%3AMouse-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/SamualLB/ncurses/blob/b04489e7c798205e36d76c62a73bc6fe0bb4a46a/src/ncurses/mouse_event.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
