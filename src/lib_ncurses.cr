@@ -59,6 +59,7 @@ lib LibNCurses
 
   # Input functions
   fun wgetch(window : Window) : LibC::Int
+  fun wget_wch(Window, LibC::Int*) : LibC::Int
   fun flushinp : LibC::Int
 
   # Mouse functions

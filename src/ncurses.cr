@@ -263,7 +263,7 @@ module NCurses
 
   # Input
   delegate keypad, no_timeout, no_delay, timeout, to: stdscr
-  delegate get_char, to: stdscr
+  delegate get_char, get_wchar, to: stdscr
 
   # Output
   delegate add_char, print, to: stdscr

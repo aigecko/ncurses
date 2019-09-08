@@ -169,11 +169,30 @@ module NCurses
       return Key.from_value?(key) || key.chr
     end
 
+    # Get a wide character input
+    #
+    # Returned as `Key` if recognised, `Char` otherwise
+    #
+    # Wrapper for `wget_wch()` (`get_wch()`)
+    def get_wchar : Key | Char | Nil
+      return nil if (LibNCurses.wget_wch(self,out key)) == ERR
+      return Key.from_value?(key) || key.chr
+    end
+
     # Get a character input for main loop
     def get_char(&block)
       no_timeout
       loop do
         ch = get_char
+        yield ch
+      end
+    end
+
+    # Get a wide character input for main loop
+    def get_wchar(&block)
+      no_timeout
+      loop do
+        ch = get_wchar
         yield ch
       end
     end
